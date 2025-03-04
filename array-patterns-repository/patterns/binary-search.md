@@ -9,7 +9,7 @@ Binary search is used to efficiently find an element in a sorted array in O(log 
 - Finding peak elements
 
 ## Template Code
-
+```java
 public int binarySearch(int[] arr, int target) {
     int left = 0, right = arr.length - 1;
     while (left <= right) {
