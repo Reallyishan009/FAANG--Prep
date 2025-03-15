@@ -66,3 +66,20 @@ function removeCharacter(str) {
 
 
 
+//QUESTIONS OF THIS APPROACH:
+
+//1: REMOVE EXCLAIMATION MARKS
+
+function removeExclamationMarks(s) {
+    return s.replace(/!/g, ""); // Replace all '!' with an empty string
+}
+//The g flag (global flag) ensures that all occurrences are removed.
+
+//2: Remove/replace numbers with 0 & 1
+
+function fakeBin(x) {
+    return x
+      .split("") // Convert string into an array of characters
+      .map(num => (num < '5' ? '0' : '1')) // Replace digits accordingly
+      .join(""); // Convert the array back into a string
+  }
