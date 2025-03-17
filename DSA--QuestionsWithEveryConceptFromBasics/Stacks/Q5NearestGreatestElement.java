@@ -2,14 +2,14 @@ package Stacks;
 
 import java.util.Stack;
 
-public class Q4NearestSmallestElement {
-    public static int[] nearestSmallerToLeft(int[] arr) {
+public class Q5NearestGreatestElement {
+    public static int[] nearestGreatestElement(int[] arr) {
         int n = arr.length;
         int[] result = new int[n];
         Stack<Integer> stack = new Stack<>();
 
         for (int i = 0; i < n; i++) {
-            while (!stack.isEmpty() && stack.peek() >= arr[i]) {
+            while (!stack.isEmpty() && stack.peek() <= arr[i]) {
                 stack.pop(); 
             }
             
@@ -22,7 +22,7 @@ public class Q4NearestSmallestElement {
 
     public static void main(String[] args) {
         int[] arr = {4, 5, 2, 10, 8};
-        int[] result = nearestSmallerToLeft(arr);
+        int[] result = nearestGreatestElement(arr);
 
         System.out.print("Nearest Smaller Elements: ");
         for (int num : result) {
