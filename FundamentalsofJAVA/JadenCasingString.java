@@ -37,3 +37,7 @@ public class JadenCasingString {
     }
 
 }
+
+//Why Use Character.toUpperCase() Instead of String.toUpperCase()?
+//String.toUpperCase() converts the entire string to uppercase.
+//Character.toUpperCase() converts only one character, which is useful for capitalizing just the first letter.

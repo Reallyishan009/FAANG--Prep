@@ -38,5 +38,39 @@ int sum = Arrays.stream(numbers).mapToInt(Integer::intValue).sum();
 ```
 2. `replace()` : use to replace two numbers at two different indexes
 
-3. 
- 
+3. * Why Use Character.toUpperCase() Instead of String.toUpperCase()? *
+- `String.toUpperCase()` converts the entire string to uppercase.
+- `Character.toUpperCase()` converts only one character, which is useful for capitalizing just the first letter.
+
+4. `stream()`
+-This line converts an `ArrayList<Integer>` (`result`) into a primitive `int[]` array in Java.
+
+### Step-by-Step Explanation:
+
+1️⃣ **result.stream()**
+
+- Converts the `ArrayList<Integer>` into a `Stream<Integer>`.
+- A stream is a sequence of elements that supports functional-style operations (e.g., mapping, filtering).
+
+2️⃣ **.mapToInt(i -> i)**
+
+- `mapToInt(i -> i)` is a mapping function that converts each `Integer` to `int`.
+- Java’s Stream API does not directly support conversion from `Stream<Integer>` to `int[]`.
+- The `.mapToInt(i -> i)` function transforms the `Stream<Integer>` into an `IntStream` (specialized stream for `int` values).
+
+**Why do we need mapToInt?**
+
+- `Stream<Integer>` contains `Integer` objects (wrapper class).
+- `.mapToInt(i -> i)` unwraps the `Integer` objects into primitive `int` values.
+- This removes unnecessary boxing and unboxing, making it memory efficient.
+
+3️⃣ **.toArray()**
+
+- Converts the `IntStream` into a primitive `int[]` array.
+- Unlike `List.toArray()` (which returns an `Object[]`), this method gives a direct `int[]` output.
+
+### Example Breakdown
+
+**Example Input:**
+
+
